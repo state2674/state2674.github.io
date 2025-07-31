@@ -9,25 +9,55 @@
     rel="stylesheet"
   />
   <style>
+    :root {
+      --bs-body-bg: #121212;
+      --bs-body-color: #e0e0e0;
+      --bs-card-bg: #1e1e1e;
+      --bs-card-color: #ffffff;
+      --bs-border-color: #333;
+      --bs-primary: #00bcd4;
+    }
+
     body {
-      background-color: #f8f9fa;
+      background-color: var(--bs-body-bg);
+      color: var(--bs-body-color);
       font-family: "Segoe UI", sans-serif;
     }
+
     .container {
       max-width: 900px;
     }
+
     .card {
+      background-color: var(--bs-card-bg);
+      color: var(--bs-card-color);
+      border: 1px solid var(--bs-border-color);
       border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     }
+
     .card-header {
-      background-color: #0d6efd;
-      color: white;
-      border-top-left-radius: 16px;
-      border-top-right-radius: 16px;
+      border-bottom: 1px solid var(--bs-border-color);
+      background-color: transparent;
     }
+
     select.form-select {
-      max-width: 200px;
+      background-color: #2c2c2c;
+      color: #e0e0e0;
+      border: 1px solid #444;
+    }
+
+    select.form-select option {
+      background-color: #2c2c2c;
+      color: #e0e0e0;
+    }
+
+    h2 {
+      color: var(--bs-primary);
+    }
+
+    a {
+      color: var(--bs-primary);
     }
   </style>
 </head>
