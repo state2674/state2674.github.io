@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>State 2674 NAP</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     :root {
       --bs-body-bg: #121212;
@@ -56,8 +53,14 @@
       color: var(--bs-primary);
     }
 
-    a {
-      color: var(--bs-primary);
+    #jinx-image {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      height: 140px;
+      opacity: 0.85;
+      pointer-events: none;
+      z-index: 10;
     }
   </style>
 </head>
@@ -85,6 +88,10 @@
     </div>
   </div>
 
+  <!-- Fixed character image -->
+  <img src="jinx.png" alt="Jinx" id="jinx-image" />
+
+  <!-- Rules logic -->
   <script src="rules.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
