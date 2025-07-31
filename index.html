@@ -1,19 +1,63 @@
-<script src="rules.js"></script>
-<script>
-  const rulesDiv = document.getElementById("rules");
-  const languageSelect = document.getElementById("languageSelect");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>State 2674 NAP</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>State 2674 NAP</h1>
 
-  function renderRules(lang) {
-    rulesDiv.innerHTML = rules[lang] || rules["en"];
-  }
+  <div class="mb-4 text-center">
+    <label for="languageSelect" class="form-label">Select Language:</label>
+    <select class="form-select w-auto d-inline-block" id="languageSelect">
+      <option value="en" selected>English</option>
+      <option value="ko">Korean</option>
+      <option value="zh">Chinese</option>
+      <option value="tr">Turkish</option>
+      <option value="fr">French</option>
+      <option value="es">Spanish</option>
+      <option value="ar">Arabic</option>
+    </select>
+  </div>
 
-  languageSelect.addEventListener("change", () => {
-    renderRules(languageSelect.value);
-  });
+  <div id="rules" class="container"></div>
 
-  // Always default to English on page load
-  window.addEventListener("DOMContentLoaded", () => {
-    languageSelect.value = "en";
-    renderRules("en");
-  });
-</script>
+  <!-- Load rules object -->
+  <script src="rules.js"></script>
+
+  <!-- Main logic -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const rulesDiv = document.getElementById("rules");
+      const languageSelect = document.getElementById("languageSelect");
+
+      function renderRules(lang) {
+        rulesDiv.innerHTML = rules[lang] || rules["en"];
+      }
+
+      languageSelect.addEventListener("change", () => {
+        renderRules(languageSelect.value);
+      });
+
+      // Force English on page load
+      languageSelect.value = "en";
+      renderRules("en");
+    });
+  </script>
+</body>
+</html>
+
