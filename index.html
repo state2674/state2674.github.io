@@ -109,24 +109,42 @@
     </div>
   </div>
 
-  <script src="rules.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const rulesDiv = document.getElementById("rules");
       const languageSelect = document.getElementById("languageSelect");
+      let rulesData = {};
+
+      // Fetch the external JSON file
+      fetch('rules.json')
+        .then(response => response.json())
+        .then(data => {
+          rulesData = data;
+          // Render default language once data is loaded
+          renderRules("en");
+        })
+        .catch(error => {
+          console.error('Error loading rules:', error);
+          rulesDiv.innerHTML = "<p class='text-danger'>Error loading rules. Please check your connection or file setup.</p>";
+        });
 
       function renderRules(lang) {
+        // Fallback to English if translation is missing
+        const content = rulesData[lang] || rulesData["en"] || "Loading...";
+        
+        // Handle RTL for Arabic
         const isRTL = lang === "ar";
         document.body.dir = isRTL ? "rtl" : "ltr";
-        rulesDiv.innerHTML = rules[lang] || rules["en"];
+        
+        rulesDiv.innerHTML = content;
       }
 
       languageSelect.addEventListener("change", () => {
         renderRules(languageSelect.value);
       });
-
+      
+      // Set initial dropdown value
       languageSelect.value = "en";
-      renderRules("en");
     });
   </script>
 </body>
