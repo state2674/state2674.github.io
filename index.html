@@ -9,13 +9,15 @@
     rel="stylesheet"
   />
   <style>
+    /* --- Shared Styles --- */
     :root {
       --bs-body-bg: #121212;
       --bs-body-color: #e0e0e0;
       --bs-card-bg: #1e1e1e;
       --bs-card-color: #ffffff;
       --bs-border-color: #333;
-      --bs-primary: #00bcd4;
+      --bs-primary: #00bcd4; /* Cyan */
+      --bs-primary-rgb: 0, 188, 212;
     }
 
     body {
@@ -40,16 +42,72 @@
       color: var(--bs-primary) !important;
     }
 
-    .container.main-content {
-      max-width: 900px;
-    }
-
+    /* Card Styling */
     .card {
       background-color: var(--bs-card-bg);
       color: var(--bs-card-color);
       border: 1px solid var(--bs-border-color);
       border-radius: 16px;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    /* Hero Section Specifics */
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Jinx Background Image styling */
+    #jinx-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 120%; /* Slightly larger to cover */
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+      filter: grayscale(20%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    /* Navigation Cards (Small) */
+    .nav-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(var(--bs-primary-rgb), 0.15);
+      border-color: var(--bs-primary);
+    }
+
+    .icon-box {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--bs-primary);
+    }
+
+    .btn-outline-primary {
+      color: var(--bs-primary);
+      border-color: var(--bs-primary);
+    }
+    .btn-outline-primary:hover {
+      background-color: var(--bs-primary);
+      color: #000;
+    }
+
+    h1 {
+      font-weight: 800;
+      letter-spacing: 1px;
     }
   </style>
 </head>
@@ -58,11 +116,9 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid px-4">
       <a class="navbar-brand" href="index.html">State 2674</a>
-      
       <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="nap.html">NAP</a></li>
@@ -73,13 +129,65 @@
     </div>
   </nav>
 
-  <div class="container main-content mt-5">
-    <div class="card p-5 text-center">
-      <h1 class="text-primary mb-4">Welcome to State 2674</h1>
-      <p class="lead">
-        Welcome to the official hub for our State. Here you can find our rules, alliance information, and community awards.
-      </p>
-      <p>Please navigate using the tabs above to view the Non-Aggression Pact (NAP) rules.</p>
+  <div class="container mt-5 mb-5">
+    
+    <div class="card hero-card p-5 mb-5">
+      <img src="jinx.png" alt="State Mascot" id="jinx-bg">
+      
+      <div class="hero-content">
+        <h1 class="display-4 text-primary mb-3">Welcome to State 2674</h1>
+        <p class="lead mb-4">
+          United in survival, forged in strategy.
+        </p>
+        <p>
+          State 2674 is a community dedicated to cooperation and strength. 
+          Whether you are defending the furnace or battling for the castle, 
+          this hub provides all the essential information you need to thrive in the frozen tundra.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      
+      <div class="col-md-4">
+        <div class="card nav-card h-100 p-4 text-center">
+          <div class="card-body">
+            <div class="icon-box">📜</div>
+            <h3 class="card-title">Rules (NAP)</h3>
+            <p class="card-text mt-3">
+              Review the current Non-Aggression Pact and State Rules. Available in multiple languages.
+            </p>
+            <a href="nap.html" class="btn btn-outline-primary mt-3 w-100">View Rules</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card nav-card h-100 p-4 text-center">
+          <div class="card-body">
+            <div class="icon-box">🛡️</div>
+            <h3 class="card-title">Alliances</h3>
+            <p class="card-text mt-3">
+              Meet the major powers of State 2674. See leaders, descriptions, and alliance profiles.
+            </p>
+            <a href="alliances.html" class="btn btn-outline-primary mt-3 w-100">View Alliances</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card nav-card h-100 p-4 text-center">
+          <div class="card-body">
+            <div class="icon-box">🏆</div>
+            <h3 class="card-title">Awards</h3>
+            <p class="card-text mt-3">
+              Hall of Fame and recognition for outstanding contributions to the State.
+            </p>
+            <a href="awards.html" class="btn btn-outline-primary mt-3 w-100">View Awards</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
