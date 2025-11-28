@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>State 2674 - NAP</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bs-body-bg: #121212;
+      --bs-body-color: #e0e0e0;
+      --bs-card-bg: #1e1e1e;
+      --bs-card-color: #ffffff;
+      --bs-border-color: #333;
+      --bs-primary: #00bcd4;
+    }
+
+    body {
+      background-color: var(--bs-body-bg);
+      color: var(--bs-body-color);
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      background-color: var(--bs-card-bg);
+      border-bottom: 1px solid var(--bs-border-color);
+    }
+    .navbar-brand {
+      color: var(--bs-primary) !important;
+      font-weight: bold;
+    }
+    .nav-link {
+      color: #e0e0e0 !important;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--bs-primary) !important;
+    }
+
+    .container.main-content {
+      max-width: 900px;
+    }
+
+    .card {
+      background-color: var(--bs-card-bg);
+      color: var(--bs-card-color);
+      border: 1px solid var(--bs-border-color);
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-header {
+      border-bottom: 1px solid var(--bs-border-color);
+      background-color: transparent;
+    }
+
+    select.form-select {
+      background-color: #2c2c2c;
+      color: #e0e0e0;
+      border: 1px solid #444;
+    }
+
+    select.form-select option {
+      background-color: #2c2c2c;
+      color: #e0e0e0;
+    }
+
+    h2 {
+      color: var(--bs-primary);
+    }
+
+    #jinx-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 600px;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @media (max-width: 768px) {
+      #jinx-image {
+        opacity: 0.05;
+        height: 450px;
+      }
+    }
+
+    #rules {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" href="index.html">State 2674</a>
+      <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="nap.html">NAP</a></li>
+          <li class="nav-item"><a class="nav-link" href="alliances.html">Alliances</a></li>
+          <li class="nav-item"><a class="nav-link" href="awards.html">Awards</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container main-content mt-5">
+    <div class="card">
+      <div class="card-header text-center py-3">
+        <h2 class="mb-0">State 2674 NAP</h2>
+      </div>
+      <div class="card-body">
+        <div class="d-flex justify-content-end mb-3">
+          <label for="languageSelect" class="me-2 align-self-center fw-semibold">Language:</label>
+          <select class="form-select" id="languageSelect">
+            <option value="en" selected>English</option>
+            <option value="ko">Korean</option>
+            <option value="zh">Chinese</option>
+            <option value="tr">Turkish</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="ar">Arabic</option>
+          </select>
+        </div>
+        <div class="position-relative">
+          <img src="jinx.png" alt="Jinx" id="jinx-image" />
+          <div id="rules"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const rulesDiv = document.getElementById("rules");
+      const languageSelect = document.getElementById("languageSelect");
+      let rulesData = {};
+
+      // Fetch the external JSON file
+      fetch('rules.json')
+        .then(response => response.json())
+        .then(data => {
+          rulesData = data;
+          // Render default language once data is loaded
+          renderRules("en");
+        })
+        .catch(error => {
+          console.error('Error loading rules:', error);
+          rulesDiv.innerHTML = "<p class='text-danger'>Error loading rules. Please check your connection or file setup.</p>";
+        });
+
+      function renderRules(lang) {
+        // Fallback to English if translation is missing
+        const content = rulesData[lang] || rulesData["en"] || "Loading...";
+        
+        // Handle RTL for Arabic
+        const isRTL = lang === "ar";
+        document.body.dir = isRTL ? "rtl" : "ltr";
+        
+        rulesDiv.innerHTML = content;
+      }
+
+      languageSelect.addEventListener("change", () => {
+        renderRules(languageSelect.value);
+      });
+      
+      // Set initial dropdown value
+      languageSelect.value = "en";
+    });
+  </script>
+</body>
+</html>
