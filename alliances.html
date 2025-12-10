@@ -58,17 +58,22 @@
       box-shadow: 0 10px 20px rgba(0, 188, 212, 0.15); 
     }
 
-    /* --- TITLE STYLING (Scaled for narrower cards) --- */
+    /* --- TITLE STYLING (Scaled for 5-column layout) --- */
     .card-title {
       color: var(--bs-primary);
       font-weight: 800;          
-      font-size: 1.3rem;         /* Kept smaller to fit col-lg-3 */
+      font-size: 1.1rem;         /* Reduced to fit 5 cards in a row */
       text-transform: uppercase; 
       letter-spacing: 0.5px;       
       text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
       border-bottom: 1px solid rgba(0, 188, 212, 0.3);
       padding-bottom: 8px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
+      min-height: 3rem; /* Ensures alignment even if titles wrap */
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center the text */
+      text-align: center;
     }
     
     .card-subtitle {
@@ -80,7 +85,7 @@
 
     /* Image Container Styling */
     .alliance-img-placeholder {
-      height: 180px; 
+      height: 150px; /* Reduced height for narrower cards */
       background-color: #2c2c2c; 
       display: flex;
       align-items: center;
@@ -97,13 +102,13 @@
       object-fit: cover; 
     }
     
-    /* Text Adjustment: slightly smaller to fit more content in narrow columns */
+    /* Text Adjustment */
     .card-text {
-      font-size: 0.85rem; 
+      font-size: 0.8rem; 
     }
     
     .small-label {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
   </style>
 </head>
@@ -125,36 +130,34 @@
     </div>
   </nav>
 
-  <div class="container mt-5 mb-5">
-    <h2 class="text-center mb-4" style="color: var(--bs-primary)">NAP Alliances</h2>
+  <div class="container-fluid mt-5 mb-5 px-4"> <h2 class="text-center mb-4" style="color: var(--bs-primary)">NAP Alliances</h2>
     
-    <div class="row g-3 justify-content-center">
+    <div class="row g-3 justify-content-center row-cols-1 row-cols-md-3 row-cols-lg-5">
 
-      <div class="col-md-6 col-lg-3">
+      <div class="col">
         <div class="card h-100">
           <div class="alliance-img-placeholder">
             <img src="TRB.gif" alt="TRB Logo">
           </div>
-          <div class="card-body p-3">
-            <h5 class="card-title">[TRB] ThaTribe</h5>
+          <div class="card-body p-2 text-center"> <h5 class="card-title">[TRB] ThaTribe</h5>
             
             <p class="card-text small-label mb-0">
-              <strong style="color: var(--bs-primary);">Primary NAP Rep:</strong> Jinx<br>
-              <strong style="color: var(--bs-primary);">Secondary NAP Rep:</strong> Roy<br>
+              <strong style="color: var(--bs-primary);">Primary:</strong> Jinx<br>
+              <strong style="color: var(--bs-primary);">Secondary:</strong> Roy<br>
             </p>
-            <div class="mt-3 pt-3 border-top border-secondary">
+            <div class="mt-2 pt-2 border-top border-secondary text-start">
               <p class="card-text">
                 TRB is a merged alliance between TheTribe and ThaBoneCrushers. We are a group of absolute degenerates who enjoy drinking, playing games, and building genuine connections. Although we are not a competitive alliance, we consistently rank 1 or 2 in SvS Prep and utilize/advocate for the best strategies. We value loyalty, camaraderie, and fairness above all else.
               </p>
             </div>
             
-            <div class="mt-3 pt-3 border-top border-secondary">
+            <div class="mt-2 pt-2 border-top border-secondary text-start">
               <p class="card-text small-label mb-0">
-                <strong style="color: var(--bs-primary);">Bear Trap 1:</strong> 23:00 UTC<br>
-                <strong style="color: var(--bs-primary);">Bear Trap 2:</strong> 18:30 UTC<br>
+                <strong style="color: var(--bs-primary);">Bear 1:</strong> 23:00 UTC<br>
+                <strong style="color: var(--bs-primary);">Bear 2:</strong> 18:30 UTC<br>
                 <strong style="color: var(--bs-primary);">Crazy Joe:</strong> 19:00 UTC<br>
                 <strong style="color: var(--bs-primary);">Foundry:</strong> Legion 1: 19:00 UTC | Legion 2: Vote<br>
-                <strong style="color: var(--bs-primary);">Canyon Clash:</strong> Legion 1: 19:00 UTC | Legion 2: Vote
+                <strong style="color: var(--bs-primary);">Canyon:</strong> Legion 1: 19:00 UTC | Legion 2: Vote
               </p>
             </div>
 
@@ -162,32 +165,32 @@
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-3">
+      <div class="col">
         <div class="card h-100">
           <div class="alliance-img-placeholder">
             [IMAGE PLACEHOLDER]
           </div>
-          <div class="card-body p-3">
+          <div class="card-body p-2 text-center">
             <h5 class="card-title">[ZSU] Legion</h5>
             
             <p class="card-text small-label mb-0">
-              <strong style="color: var(--bs-primary);">Primary NAP Rep:</strong> Keela<br>
-              <strong style="color: var(--bs-primary);">Secondary NAP Rep:</strong> Frost<br>
+              <strong style="color: var(--bs-primary);">Primary:</strong> Keela<br>
+              <strong style="color: var(--bs-primary);">Secondary:</strong> Frost<br>
             </p>
             
-            <div class="mt-3 pt-3 border-top border-secondary">
+            <div class="mt-2 pt-2 border-top border-secondary text-start">
               <p class="card-text">
                 Description coming soon.
               </p>
             </div>
 
-            <div class="mt-3 pt-3 border-top border-secondary">
+            <div class="mt-2 pt-2 border-top border-secondary text-start">
               <p class="card-text small-label mb-0">
-                <strong style="color: var(--bs-primary);">Bear Trap 1:</strong> TBD<br>
-                <strong style="color: var(--bs-primary);">Bear Trap 2:</strong> TBD<br>
+                <strong style="color: var(--bs-primary);">Bear 1:</strong> TBD<br>
+                <strong style="color: var(--bs-primary);">Bear 2:</strong> TBD<br>
                 <strong style="color: var(--bs-primary);">Crazy Joe:</strong> TBD<br>
                 <strong style="color: var(--bs-primary);">Foundry:</strong> TBD<br>
-                <strong style="color: var(--bs-primary);">Canyon Clash:</strong> TBD
+                <strong style="color: var(--bs-primary);">Canyon:</strong> TBD
               </p>
             </div>
 
@@ -195,32 +198,32 @@
         </div>
       </div>
       
-      <div class="col-md-6 col-lg-3">
+      <div class="col">
         <div class="card h-100">
           <div class="alliance-img-placeholder">
             [IMAGE PLACEHOLDER]
           </div>
-          <div class="card-body p-3">
+          <div class="card-body p-2 text-center">
             <h5 class="card-title">[KSF] StrongFriends</h5>
             
             <p class="card-text small-label mb-0">
-              <strong style="color: var(--bs-primary);">Primary NAP Rep:</strong> 코미<br>
-              <strong style="color: var(--bs-primary);">Secondary NAP Rep:</strong> lovable<br>
+              <strong style="color: var(--bs-primary);">Primary:</strong> 코미<br>
+              <strong style="color: var(--bs-primary);">Secondary:</strong> lovable<br>
             </p>
             
-            <div class="mt-3 pt-3 border-top border-secondary">
+            <div class="mt-2 pt-2 border-top border-secondary text-start">
               <p class="card-text">
                 Description coming soon.
               </p>
             </div>
 
-            <div class="mt-3 pt-3 border-top border-secondary">
+            <div class="mt-2 pt-2 border-top border-secondary text-start">
               <p class="card-text small-label mb-0">
-                <strong style="color: var(--bs-primary);">Bear Trap 1:</strong> TBD<br>
-                <strong style="color: var(--bs-primary);">Bear Trap 2:</strong> TBD<br>
+                <strong style="color: var(--bs-primary);">Bear 1:</strong> TBD<br>
+                <strong style="color: var(--bs-primary);">Bear 2:</strong> TBD<br>
                 <strong style="color: var(--bs-primary);">Crazy Joe:</strong> TBD<br>
                 <strong style="color: var(--bs-primary);">Foundry:</strong> TBD<br>
-                <strong style="color: var(--bs-primary);">Canyon Clash:</strong> TBD
+                <strong style="color: var(--bs-primary);">Canyon:</strong> TBD
               </p>
             </div>
 
@@ -228,32 +231,32 @@
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-3">
+      <div class="col">
         <div class="card h-100">
           <div class="alliance-img-placeholder">
             [IMAGE PLACEHOLDER]
           </div>
-          <div class="card-body p-3">
+          <div class="card-body p-2 text-center">
             <h5 class="card-title">[KnG] KingdomOfSnow</h5>
             
             <p class="card-text small-label mb-0">
-              <strong style="color: var(--bs-primary);">Primary NAP Rep:</strong> 코미<br>
-              <strong style="color: var(--bs-primary);">Secondary NAP Rep:</strong> lovable<br>
+              <strong style="color: var(--bs-primary);">Primary:</strong> 코미<br>
+              <strong style="color: var(--bs-primary);">Secondary:</strong> lovable<br>
             </p>
             
-            <div class="mt-3 pt-3 border-top border-secondary">
+            <div class="mt-2 pt-2 border-top border-secondary text-start">
               <p class="card-text">
                 Description coming soon.
               </p>
             </div>
 
-            <div class="mt-3 pt-3 border-top border-secondary">
+            <div class="mt-2 pt-2 border-top border-secondary text-start">
               <p class="card-text small-label mb-0">
-                <strong style="color: var(--bs-primary);">Bear Trap 1:</strong> TBD<br>
-                <strong style="color: var(--bs-primary);">Bear Trap 2:</strong> TBD<br>
+                <strong style="color: var(--bs-primary);">Bear 1:</strong> TBD<br>
+                <strong style="color: var(--bs-primary);">Bear 2:</strong> TBD<br>
                 <strong style="color: var(--bs-primary);">Crazy Joe:</strong> TBD<br>
                 <strong style="color: var(--bs-primary);">Foundry:</strong> TBD<br>
-                <strong style="color: var(--bs-primary);">Canyon Clash:</strong> TBD
+                <strong style="color: var(--bs-primary);">Canyon:</strong> TBD
               </p>
             </div>
 
@@ -261,32 +264,32 @@
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-3">
+      <div class="col">
         <div class="card h-100">
           <div class="alliance-img-placeholder">
             [IMAGE PLACEHOLDER]
           </div>
-          <div class="card-body p-3">
+          <div class="card-body p-2 text-center">
             <h5 class="card-title">[ICE] FrostBite</h5>
             
             <p class="card-text small-label mb-0">
-              <strong style="color: var(--bs-primary);">Primary NAP Rep:</strong> Mai<br>
-              <strong style="color: var(--bs-primary);">Secondary NAP Rep:</strong> PeachyMaker<br>
+              <strong style="color: var(--bs-primary);">Primary:</strong> Mai<br>
+              <strong style="color: var(--bs-primary);">Secondary:</strong> PeachyMaker<br>
             </p>
             
-            <div class="mt-3 pt-3 border-top border-secondary">
+            <div class="mt-2 pt-2 border-top border-secondary text-start">
               <p class="card-text">
                 Description coming soon.
               </p>
             </div>
 
-            <div class="mt-3 pt-3 border-top border-secondary">
+            <div class="mt-2 pt-2 border-top border-secondary text-start">
               <p class="card-text small-label mb-0">
-                <strong style="color: var(--bs-primary);">Bear Trap 1:</strong> TBD<br>
-                <strong style="color: var(--bs-primary);">Bear Trap 2:</strong> TBD<br>
+                <strong style="color: var(--bs-primary);">Bear 1:</strong> TBD<br>
+                <strong style="color: var(--bs-primary);">Bear 2:</strong> TBD<br>
                 <strong style="color: var(--bs-primary);">Crazy Joe:</strong> TBD<br>
                 <strong style="color: var(--bs-primary);">Foundry:</strong> TBD<br>
-                <strong style="color: var(--bs-primary);">Canyon Clash:</strong> TBD
+                <strong style="color: var(--bs-primary);">Canyon:</strong> TBD
               </p>
             </div>
 
