@@ -1,0 +1,78 @@
+[
+  {
+    "title": "General Rules",
+    "rules": [
+      "NAP includes the top 5 alliances (KSF, TRB, ZSU, KnG, ICE), their academies (INF, DXT, KN2, Ice), and the SvS alliance (PUN).",
+      "No attacking, rallying, or scouting NAP alliances, including their academies, cities, headquarters, and banners.",
+      "No attacking gathering tiles outside of designated events (Brothers In Arms).",
+      "Do not gather in another alliance's hive. Attacks on gathering tiles are allowed in this case.",
+      "Violating NAP rules may result in presidential punishment, compensation, troop loss, removal from a NAP alliance, or removal from NAP entirely.",
+      "Players cannot leave NAP, break rules, and rejoin NAP. Any attempt to bypass rules will lead to punishment.",
+      "Once NAP agrees to punish a player, the alliance occupying the player must comply or forfeit their position in NAP."
+    ]
+  },
+  {
+    "title": "Brothers In Arms Rules",
+    "rules": [
+      "No attacks or rallies on NAP cities, headquarters, or banners.",
+      "Players can attack any gathering tiles.",
+      "Players can attack other players near their hive (this includes NAP players; teleport out of your hive at your own risk).",
+      "Players who teleport near another alliance's hive are not allowed to attack NAP cities, headquarters, or banners still.",
+      "Maximum of 2 attacks per city.",
+      "No player should be reinforced while away from their alliance's hive.",
+      "No rallies on NAP cities are permitted."
+    ]
+  },
+  {
+    "title": "Alliance Rules",
+    "rules": [
+      "Each NAP alliance can designate only 1 academy alliance.",
+      "The SvS designated alliance is protected by NAP (Current Name: [PUN]HUB).",
+      "No poaching players from NAP alliances."
+    ]
+  },
+  {
+    "title": "Presidency Rules",
+    "rules": [
+      "The presidency will rotate among all NAP alliances. The selection method is up to each alliance.",
+      "Regular Presidency and Supreme Presidency rotations are separate.",
+      "The President should be decided before the State vs State battle begins.",
+      "The winning R5 must transfer presidency to the chosen president (during State vs State it should be transferred before Battle Phase ends).",
+      "The president must activate presidential skills during event-aligned days or be removed from rotation until NAP votes otherwise.",
+      "The president is a servant for the state, not a ruler, and should always follow what NAP agrees upon."
+    ]
+  },
+  {
+    "title": "Facilities, Fortresses, and Stronghold Rules",
+    "rules": [
+      "NAP alliances must follow agreed rotation schedules for fortresses and strongholds.",
+      "No solo attack on fortresses or strongholds.",
+      "Strongholds and fortresses will be chosen by NAP alliances after SvS preparation, based on preparation rankings.",
+      "Only the assigned NAP alliance may attack a stronghold or fortress. No other player or alliance should touch it.",
+      "Facilities are free-for-all. Alliances may share or fight for them fairly. Level 4 facilities and troop marching facility will go to SvS alliance before SvS.",
+      "No alliances can control duplicate facilities.",
+      "Players strictly cannot switch alliances to assist in facility battles. Multiple alliances may compete or cooperate for a facility. Absolutely no city attacks during facility battles, even during Brothers In Arms.",
+      "Do not place banners that block other alliances’ paths to facilities. If an alliance is blocking a path, they should, within a reasonable amount of time, resolve the blockage."
+    ]
+  },
+  {
+    "title": "Voting & Governance",
+    "rules": [
+      "NAP decisions are made by alliance majority vote.",
+      "If voting results in a tie, the current president casts the deciding vote.",
+      "Each NAP alliance will have a single representative that will vote for the whole alliance. However, other members are allowed to share their opinions."
+    ]
+  },
+  {
+    "title": "Minister Queue Rules",
+    "rules": [
+      "Minister of Interior may only be used by R4 and R5 members of NAP alliances. It cannot be used to move players in minister queues. It may only be used to create new reservations or swap two players if both players agree."
+    ]
+  },
+  {
+    "title": "Chat & Conduct",
+    "rules": [
+      "Freedom of Speech. Anyone can say anything they want. If you don’t like it, use the blacklist feature."
+    ]
+  }
+]
