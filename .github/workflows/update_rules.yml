@@ -1,0 +1,38 @@
+name: Auto-Translate Rules
+
+# Trigger this action only when 'rules_source.json' is modified
+on:
+  push:
+    paths:
+      - 'rules_source.json'
+      - 'build_rules.py'
+
+jobs:
+  build_and_commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Allows the bot to commit changes back to your repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Translator
+        run: pip install deep-translator
+
+      - name: Run Translation Script
+        run: python build_rules.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          # Check if rules.json changed. If so, commit it.
+          git add rules.json
+          git commit -m "Auto-update rules.json with translations" || echo "No changes to commit"
+          git push
