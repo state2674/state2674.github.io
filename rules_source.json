@@ -60,7 +60,7 @@
     "rules": [
       "NAP decisions are made by alliance majority vote.",
       "If voting results in a tie, the current president casts the deciding vote.",
-      "Each NAP alliance will have a single representative that will vote for the whole alliance. However, other members are allowed to share their opinions."
+      "Each NAP alliance will have a Primary and Secondary representative within the NAP chat. The Primary representative should be addressed before decisions are made. The Secondary representative acts if the Primary is unavailable within a reasonable amount of time. These representatives speak and vote on behalf of their alliance, though other members are allowed to share their opinions."
     ]
   },
   {
